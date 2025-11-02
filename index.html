@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindEase — Empathetic AI</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo-placeholder">💙</div>
+        <div>
+          <h1>MindEase</h1>
+          <p class="tag">Kind listening · Practical tools</p>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="clear-btn" title="Clear conversation">New</button>
+      </div>
+    </header>
+
+    <section id="chat-area" class="chat-area" aria-live="polite">
+      <div id="messages" class="messages"></div>
+    </section>
+
+    <form id="composer" class="composer" autocomplete="off">
+      <div class="composer-left">
+        <textarea id="user-input" rows="1" placeholder="Share how you feel..." aria-label="Message input"></textarea>
+      </div>
+      <div class="composer-right">
+        <button id="send-btn" type="submit">Send</button>
+      </div>
+    </form>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <h3>Quick tools</h3>
+        <button id="coping-btn">3-minute breathing</button>
+        <button id="journal-btn">Quick journal prompt</button>
+        <p class="small">If you're in crisis, please contact local emergency services or your crisis hotline.</p>
+      </div>
+
+      <div class="panel" id="resources-panel">
+        <h3>Resources</h3>
+        <ul id="resources-list"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <template id="msg-template">
+    <div class="msg">
+      <div class="meta">
+        <span class="who"></span>
+        <span class="mood-tag" aria-hidden="true"></span>
+      </div>
+      <div class="content"></div>
+    </div>
+  </template>
+
+  <script type="module" src="/script.js"></script>
+</body>
+</html>
